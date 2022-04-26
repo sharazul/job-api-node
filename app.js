@@ -30,7 +30,6 @@ app.use(
   })
 )
 
-routes
 app.get('/', (req, res) => {
   res.send('jobs api')
 })
