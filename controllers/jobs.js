@@ -9,7 +9,10 @@ const createJob = async (req, res) => {
 }
 
 const getAllJobs = async (req, res) => {
-  const job = await Job.find({ createdBy: req.user.userid })
+  const job = await Job.find({})
+  if (!job) {
+    return res.status(400).json('wrong')
+  }
   res.status(StatusCodes.OK).json(job)
 }
 
